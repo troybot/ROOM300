@@ -31,27 +31,27 @@ if not MsgText[2] and not msg.reply_id then
 if redis:get(boss..'lock_id'..msg.chat_id_) then
 local msgs = redis:get(boss..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
 GetUserID(msg.sender_user_id_,function(arg,data)
-if data.username_ then UserNameID = "🎫¦ مـعرفك •⊱ @"..data.username_.." ⊰•\n" else UserNameID = "" end
+if data.username_ then UserNameID = "💡¦ مـعرفڪ •⊱ @"..data.username_.." ⊰•\n" else UserNameID = "" end
 local Namei = FlterName(data.first_name_..' '..(data.last_name_ or ""),20)
 GetPhotoUser(msg.sender_user_id_,function(arg, data)
 if data.photos_[0] then 
 sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,
-'👤¦ أســمـك •⊱ { '..Namei..' } ⊰•\n'
-..'🎟¦ ايديــك •⊱ {'..msg.sender_user_id_..'} ⊰•\n'
+'👤¦ أســمـڪ •⊱ { '..Namei..' } ⊰•\n'
+..'🚦¦ ايديــڪ •⊱ {'..msg.sender_user_id_..'} ⊰•\n'
 ..UserNameID
-..'📡¦ رتبتـــك •⊱ '..msg.TheRank..' ⊰•\n'
-..'⭐️¦ تفاعـلك •⊱ '..Get_Ttl(msgs)..'⊰•\n'
-..'💬¦ رسائلك •⊱ {'..msgs..'} ⊰•\n➖'
+..'🎖¦ رتبتـــڪ •⊱ '..msg.TheRank..' ⊰•\n'
+..'⚡¦ تفاعـلڪ •⊱ '..Get_Ttl(msgs)..'⊰•\n'
+..'💌¦ رسائلڪ •⊱ {'..msgs..'} ⊰•\n➖'
 ,dl_cb,nil)
 else
 sendMsg(msg.chat_id_,msg.id_,
-'🚸¦ لا يوجد صوره في بروفايلك ...!\n\n'
-..'👤¦ أســمـك •⊱ { '..Namei..' } ⊰•\n'
+'🌇¦ لا يوجد صوره في بروفايلڪ ...!\n\n'
+..'👤¦ أســمـڪ •⊱ { '..Namei..' } ⊰•\n'
 ..'['..UserNameID..']'
-..'🏷¦ ايديــك •⊱ {`'..msg.sender_user_id_..'`} ⊰•\n\n'
-..'📮¦ رتبتـــك •⊱ '..msg.TheRank..' ⊰•\n'
-..'⭐️¦ تفاعـلك » '..Get_Ttl(msgs)..'\n'
-..'💬¦ رسائلك •⊱ {'..msgs..'} ⊰•\n➖')
+..'📮¦ ايديــڪ •⊱ {`'..msg.sender_user_id_..'`} ⊰•\n\n'
+..'🥈¦ رتبتـــڪ •⊱ '..msg.TheRank..' ⊰•\n'
+..'💥¦ تفاعـلڪ » '..Get_Ttl(msgs)..'\n'
+..'💌¦ رسائلڪ •⊱ {'..msgs..'} ⊰•\n➖')
 end
 end) 
 end ,nil)
@@ -76,10 +76,10 @@ local GroupName = (redis:get(boss..'group:name'..msg.chat_id_) or '')
 redis:set(boss..'linkGroup'..msg.chat_id_,(data.invite_link_ or ""))
 return sendMsg(msg.chat_id_,msg.id_,
 "ـ  •⊱ { مـعـلومـات الـمـجـموعـه } ⊰•\n\n"
-.."*👥¦* عدد الاعـضـاء •⊱ { *"..data.member_count_.."* } ⊰•"
-.."\n*📛¦* عدد المحظـوريـن •⊱ { *"..data.kicked_count_.."* } ⊰•"
-.."\n*🗣¦* عدد الادمـنـيـه •⊱ { *"..data.administrator_count_.."* } ⊰•"
-.."\n*🔚¦* الايــدي •⊱ { `"..msg.chat_id_.."` } ⊰•"
+.."*🎎¦* عدد الاعـضـاء •⊱ { *"..data.member_count_.."* } ⊰•"
+.."\n*🚭¦* عدد المحظـوريـن •⊱ { *"..data.kicked_count_.."* } ⊰•"
+.."\n*🏅¦* عدد الادمـنـيـه •⊱ { *"..data.administrator_count_.."* } ⊰•"
+.."\n*🌠¦* الايــدي •⊱ { `"..msg.chat_id_.."` } ⊰•"
 .."\n\nـ •⊱ {  ["..FlterName(GroupName).."]("..(data.invite_link_ or "")..")  } ⊰•\n"
 )
 end,nil) 
